@@ -1,0 +1,42 @@
+#events-box {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-content: flex-start;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.box {
+  background-color: var(--trivago-white-color);
+  border: 1px solid var(--trivago-gray-color);
+  padding: 2rem;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+}
+
+.box-date {
+  text-align: left;
+}
+
+.box-title {
+  text-align: justify;
+  margin-bottom: 4rem;
+}
+
+.box-filter {
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  #events-box {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

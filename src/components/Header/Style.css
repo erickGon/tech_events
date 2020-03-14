@@ -1,0 +1,64 @@
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 5rem;
+}
+
+.App-header {
+  background-color: var(--trivago-white-color);
+  height: auto;
+  padding: 0.5rem;
+  color: var(--trivago-black-color);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.App-header .logo {
+  margin-right: 10rem;
+  margin-left: 5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .App-header .logo {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.App-header .logo div {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  cursor: pointer;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  color: var(--trivago-gray-color);
+}
+
+.link:hover {
+  color: var(--trivago-blue-color);
+}
+
+.active {
+  color: var(--trivago-blue-color);
+}
+
+.App-title {
+  font-size: var(--trivago-big);
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

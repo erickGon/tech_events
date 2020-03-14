@@ -1,0 +1,25 @@
+:root {
+  --trivago-blue-color: rgb(18, 127, 171);
+
+  --trivago-light-blue-color: rgb(129, 191, 213);
+
+  --trivago-orange-color: rgb(199, 75, 54);
+
+  --trivago-green-color: rgb(69, 130, 20);
+
+  --trivago-light-green-color: rgb(159, 193, 130);
+
+  --trivago-yellow-color: rgb(242, 143, 57);
+
+  --trivago-dark-gray-color: rgb(55, 69, 77);
+
+  --trivago-gray-color: rgb(155, 168, 166);
+
+  --trivago-light-gray-color: rgb(235, 236, 237);
+
+  --trivago-white-color: rgb(255, 255, 255);
+
+  --trivago-black-color: rgb(0, 0, 0);
+
+  --trivago-transparent-color: rgba(0, 0, 0, 0.7);
+}
