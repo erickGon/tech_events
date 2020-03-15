@@ -55,6 +55,22 @@ Your app is ready to be deployed!
 
 See the section about [deployment](#deployment) for more information.
 
+### `npm run stylelint`
+
+Check if css code match stylelint recomended rules.
+
+### `npm run reformat:stylelint`
+
+Format when possible css code to match stylelint rules.
+
+### `npm run lint`
+
+Check if ts and tsx match prettier recomended rules.
+
+### `npm run reformat:lint`
+
+Format when possible ts and tsx code to match prettier rules. 
+
 ## Supported Browsers
 
 By default, the generated project uses the latest version of React.

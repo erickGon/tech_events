@@ -1,31 +1,31 @@
 .trivago-primary-button {
-  border: 0.2rem solid var(--trivago-blue-color);
-  color: var(--trivago-blue-color);
   background-color: var(--trivago-white-color);
-  font-size: var(--trivago-medium);
-  cursor: pointer;
-  padding: 0.5rem 1rem;
+  border: 0.2rem solid var(--trivago-blue-color);
   border-radius: 2px;
+  color: var(--trivago-blue-color);
+  cursor: pointer;
   display: inline-block;
+  font-size: var(--trivago-medium);
+  padding: 0.5rem 1rem;
 }
 
 .trivago-primary-button:hover {
-  color: var(--trivago-white-color);
   background-color: var(--trivago-blue-color);
+  color: var(--trivago-white-color);
 }
 
 .trivago-secondary-button {
-  border: 0.2rem solid var(--trivago-green-color);
-  color: var(--trivago-green-color);
   background-color: var(--trivago-white-color);
-  font-size: var(--trivago-medium);
-  cursor: pointer;
-  padding: 0.5rem 1rem;
+  border: 0.2rem solid var(--trivago-green-color);
   border-radius: 2px;
+  color: var(--trivago-green-color);
+  cursor: pointer;
   display: inline-block;
+  font-size: var(--trivago-medium);
+  padding: 0.5rem 1rem;
 }
 
 .trivago-secondary-button:hover {
-  color: var(--trivago-white-color);
   background-color: var(--trivago-green-color);
+  color: var(--trivago-white-color);
 }

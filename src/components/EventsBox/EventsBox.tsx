@@ -111,13 +111,13 @@ class EventsBox extends React.Component<Props, State> {
       <section id="events-box">
         <div className="box-filter">
           {this.state.showOnlyFree ? (
-            <span onClick={() => this.toggleFreeEvents()}>
+            <a onClick={() => this.toggleFreeEvents()}>
               <Button text="Free" secondary={true} />
-            </span>
+            </a>
           ) : (
-            <span onClick={() => this.toggleFreeEvents()}>
+            <a onClick={() => this.toggleFreeEvents()}>
               <Button text="All" />
-            </span>
+            </a>
           )}
 
           <input

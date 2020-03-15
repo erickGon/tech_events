@@ -4,42 +4,42 @@
 }
 
 .App-header {
-  background-color: var(--trivago-white-color);
-  height: auto;
-  padding: 0.5rem;
-  color: var(--trivago-black-color);
-  width: 100%;
-  display: flex;
   align-items: center;
+  background-color: var(--trivago-white-color);
+  color: var(--trivago-black-color);
+  display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
   list-style: none;
   margin: 0;
-  flex-wrap: wrap;
+  padding: 0.5rem;
+  width: 100%;
 }
 
 .App-header .logo {
-  margin-right: 10rem;
   margin-left: 5rem;
+  margin-right: 10rem;
 }
 
 @media screen and (max-width: 600px) {
   .App-header .logo {
     margin: 0;
-    width: 100%;
     text-align: center;
+    width: 100%;
   }
 }
 
 .App-header .logo div {
-  display: flex;
   align-items: center;
+  display: flex;
 }
 
 .link {
+  color: var(--trivago-gray-color);
   cursor: pointer;
   padding-left: 2rem;
   padding-right: 2rem;
-  color: var(--trivago-gray-color);
 }
 
 .link:hover {
@@ -58,6 +58,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
