@@ -1,8 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-The project is deployed on AWS
+## The project is deployed on AWS
 
 https://master.dlwxu9b9kdixb.amplifyapp.com/
+
+## Github pages
+
+https://erickgon.github.io/tech_events/
 
 ## Folder Structure
 
