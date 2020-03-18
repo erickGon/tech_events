@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+The project is deployed on AWS
+
+https://master.dlwxu9b9kdixb.amplifyapp.com/
+
 ## Folder Structure
 
 After creation, your project should look like this:
