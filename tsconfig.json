@@ -17,15 +17,12 @@
     "importHelpers": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true,
+    "noUnusedLocals": true
   },
   "exclude": [
-    "node_modules",
     "build",
-    "scripts",
-    "acceptance-tests",
-    "webpack",
-    "jest",
-    "src/setupTests.ts"
-  ]
+    "node_modules",
+    "scripts"
+  ],
+  "include": ["src/**/*"],
 }

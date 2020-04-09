@@ -6,7 +6,7 @@ import "./Style.css";
 import logo from "assets/img/logo.svg";
 
 type Props = {
-  toggleEvents: any;
+  toggleEvents(show: boolean): void;
 };
 
 type State = {

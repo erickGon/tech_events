@@ -43,7 +43,7 @@ class App extends React.Component<Props, State> {
     localStorage.setItem("myEvents", JSON.stringify(myEvents));
   }
 
-  public toggleEvents = (show: boolean) => {
+  public toggleEvents = (show: boolean): void => {
     this.setState({ showMyEvents: show });
   };
 
