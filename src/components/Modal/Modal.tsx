@@ -4,21 +4,21 @@ import * as React from "react";
 import "./Style.css";
 
 // Components
-import Button from "components/Button/Button";
+import Button from "@/components/Button/Button";
 
 // Types
-import cityType from "types/city";
-import eventType from "types/event";
+import cityType from "@/types/city";
+import eventType from "@/types/event";
 
 // Services
-import parseDate from "services/parseDate";
-import setCityName from "services/setCityName";
+import parseDate from "@/services/parseDate";
+import setCityName from "@/services/setCityName";
 
 type Props = {
-  showModal: boolean;
-  toggleModal: any;
   cities: cityType[];
   event: eventType;
+  showModal: boolean;
+  toggleModal(): void;
 };
 
 class Modal extends React.Component<Props> {
@@ -40,10 +40,7 @@ class Modal extends React.Component<Props> {
       <div>
         {this.props.showModal ? (
           <section id="modal">
-            <div
-              className="modal-background"
-              onClick={this.props.toggleModal}
-            />
+            <a className="modal-background" onClick={this.props.toggleModal} />
             <div className="modal-box">
               <div className="modal-header">
                 <span />
@@ -65,12 +62,12 @@ class Modal extends React.Component<Props> {
                 <p>Are you sure?</p>
               </div>
               <div className="modal-footer">
-                <span onClick={this.props.toggleModal}>
+                <a onClick={this.props.toggleModal}>
                   <Button text="cancel" secondary={true} />
-                </span>
-                <span onClick={this.joinEvent}>
+                </a>
+                <a onClick={this.joinEvent}>
                   <Button text="Join" />
-                </span>
+                </a>
               </div>
             </div>
           </section>

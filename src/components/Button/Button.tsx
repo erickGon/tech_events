@@ -15,7 +15,7 @@ class Header extends React.Component<Props> {
 
   public render() {
     return (
-      <a
+      <button
         className={
           this.props.secondary
             ? "trivago-secondary-button"
@@ -23,7 +23,7 @@ class Header extends React.Component<Props> {
         }
       >
         {this.props.text}
-      </a>
+      </button>
     );
   }
 }

@@ -4,18 +4,18 @@ import * as React from "react";
 import "./Style.css";
 
 // Components
-import Button from "components/Button/Button";
-import Modal from "components/Modal/Modal";
+import Button from "@/components/Button/Button";
+import Modal from "@/components/Modal/Modal";
 
 // Types
-import cityType from "types/city";
-import eventType from "types/event";
+import cityType from "@/types/city";
+import eventType from "@/types/event";
 
 // Services
-import hasSingUp from "services/hasSingUp";
-import parseDate from "services/parseDate";
-import parseTimeBetween from "services/parseTimeBetween";
-import setCityName from "services/setCityName";
+import hasSingUp from "@/services/hasSingUp";
+import parseDate from "@/services/parseDate";
+import parseTimeBetween from "@/services/parseTimeBetween";
+import setCityName from "@/services/setCityName";
 
 type Props = {
   event: eventType;
@@ -38,7 +38,7 @@ class EventsList extends React.Component<Props, State> {
     super(props);
   }
 
-  public toggleModal = () => {
+  public toggleModal = (): void => {
     this.setState({ showModal: !this.state.showModal });
   };
 
@@ -79,18 +79,16 @@ class EventsList extends React.Component<Props, State> {
 
             {this.props.showMyEvents ? (
               <div className="col-1">
-                <span
-                  onClick={() => this.cancelReservation(this.props.event.id)}
-                >
+                <a onClick={() => this.cancelReservation(this.props.event.id)}>
                   <Button text="Cancel" secondary={true} />
-                </span>
+                </a>
               </div>
             ) : (
               <div className="col-1">
                 {hasSingUp(this.props.event) ? (
-                  <span onClick={() => this.toggleModal()}>
+                  <a onClick={() => this.toggleModal()}>
                     <Button text="Sing Up" />
-                  </span>
+                  </a>
                 ) : (
                   <span>
                     <Button text="You are in" secondary={true} />

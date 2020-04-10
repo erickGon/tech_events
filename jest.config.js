@@ -1,9 +1,9 @@
 module.exports = {
-    transform: {
-      '.(ts|tsx)': 'ts-jest',
-    },
+    moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
     testPathIgnorePatterns: ['/node_modules/', '/lib/'],
     testRegex: '(/test/.*|\\.(test|spec))\\.(ts|tsx|js)$',
-    moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
+    transform: {
+      '.(ts|tsx)': 'ts-jest',
+    }
   };
   

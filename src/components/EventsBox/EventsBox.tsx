@@ -4,19 +4,19 @@ import * as React from "react";
 import "./Style.css";
 
 // Types
-import cityType from "types/city";
-import eventType from "types/event";
+import cityType from "@/types/city";
+import eventType from "@/types/event";
 
 // Components
-import Button from "components/Button/Button";
-import EventsList from "components/EventsList/EventsList";
+import Button from "@/components/Button/Button";
+import EventsList from "@/components/EventsList/EventsList";
 
 // Services
-import filterByNameOrCity from "services/filterByNameOrCity";
-import filterFree from "services/filterFree";
-import groupByDate from "services/groupByDate";
-import isStringEmpty from "services/isStringEmpty";
-import parseDate from "services/parseDate";
+import filterByNameOrCity from "@/services/filterByNameOrCity";
+import filterFree from "@/services/filterFree";
+import groupByDate from "@/services/groupByDate";
+import isStringEmpty from "@/services/isStringEmpty";
+import parseDate from "@/services/parseDate";
 
 type Props = {
   cities: cityType[];

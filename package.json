@@ -1,4 +1,9 @@
 {
+  "author": {
+    "email": "erickfat19@gmail.com",
+    "name": "Erick González",
+    "url": "https://github.com/erickGon"
+  },
   "name": "tech-events",
   "version": "0.1.0",
   "private": true,
@@ -30,6 +35,7 @@
     "@types/node": "^12.7.2",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
+    "@types/storybook__react": "^5.2.1",
     "awesome-typescript-loader": "^5.2.1",
     "axios-mock-adapter": "^1.17.0",
     "babel-eslint": "^10.0.2",
@@ -37,6 +43,7 @@
     "eslint-config-prettier": "^6.1.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-react": "^7.14.3",
+    "file-loader": "^6.0.0",
     "jest": "^25.2.7",
     "prettier": "^1.18.2",
     "prettier-eslint": "^9.0.0",
@@ -50,6 +57,7 @@
     "stylelint-order": "^3.0.1",
     "ts-jest": "^25.3.1",
     "ts-loader": "^6.2.2",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
     "typescript": "^3.5.3"
   }
 }

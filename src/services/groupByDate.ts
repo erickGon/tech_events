@@ -1,6 +1,6 @@
-import eventType from "types/event";
+import eventType from "@/types/event";
 
-import parseDate from "services/parseDate";
+import parseDate from "@/services/parseDate";
 
 const groupByDate = (data: eventType[]) => {
   const dates = data.reduce((groups, event) => {

@@ -1,4 +1,4 @@
-import cityType from "types/city";
+import cityType from "@/types/city";
 
 const setCityName = (cities: cityType[], id: number) => {
   let cityName = "";

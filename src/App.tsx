@@ -1,18 +1,18 @@
 import * as React from "react";
 
 // Styles
-import "assets/styles/App.css";
+import "@/assets/styles/App.css";
 
 // Components
-import EventsBox from "components/EventsBox/EventsBox";
-import Header from "components/Header/Header";
+import EventsBox from "@/components/EventsBox/EventsBox";
+import Header from "@/components/Header/Header";
 
 // Services
-import GetApiData from "services/getApiData";
+import GetApiData from "@/services/getApiData";
 
 // Types
-import cityType from "types/city";
-import eventType from "types/event";
+import cityType from "@/types/city";
+import eventType from "@/types/event";
 
 type Props = {};
 

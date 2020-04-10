@@ -3,7 +3,7 @@ import * as React from "react";
 // Styles
 import "./Style.css";
 
-import logo from "assets/img/logo.svg";
+import logo from "@/assets/img/logo.svg";
 
 type Props = {
   toggleEvents(show: boolean): void;
@@ -33,17 +33,15 @@ class Header extends React.Component<Props, State> {
               <h1 className="App-title">Tech events</h1>
             </div>
           </li>
-          <li
-            className={this.state.allState ? "link active" : "link"}
-            onClick={() => this.changeState(true)}
-          >
-            <h3>All events</h3>
+          <li className={this.state.allState ? "link active" : "link"}>
+            <a onClick={() => this.changeState(true)}>
+              <h3>All events</h3>
+            </a>
           </li>
-          <li
-            className={!this.state.allState ? "link active" : "link"}
-            onClick={() => this.changeState(false)}
-          >
-            <h3>My events</h3>
+          <li className={!this.state.allState ? "link active" : "link"}>
+            <a onClick={() => this.changeState(false)}>
+              <h3>My events</h3>
+            </a>
           </li>
         </ul>
       </header>
