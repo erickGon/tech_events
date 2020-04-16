@@ -10,6 +10,7 @@ import eventType from "@/types/event";
 // Components
 import Button from "@/components/Button/Button";
 import EventsList from "@/components/EventsList/EventsList";
+import Input from "@/components/Input/Input";
 
 // Services
 import filterByNameOrCity from "@/services/filterByNameOrCity";
@@ -51,8 +52,8 @@ class EventsBox extends React.Component<Props, State> {
     this.setState({ showOnlyFree: !this.state.showOnlyFree });
   };
 
-  public handleChange = (event: any) => {
-    this.setState({ nameOrCity: event.target.value });
+  public handleChange = (text: string): void => {
+    this.setState({ nameOrCity: text });
   };
 
   public render() {
@@ -120,12 +121,11 @@ class EventsBox extends React.Component<Props, State> {
             </a>
           )}
 
-          <input
-            type="text"
+          <Input
+            handleChange={this.handleChange}
             name="nameOrCity"
-            placeholder=" Search by name of city"
-            value={this.state.nameOrCity}
-            onChange={this.handleChange}
+            placeholder=" Search by title or city"
+            type="text"
           />
         </div>
         {this.props.showMyEvents ? (

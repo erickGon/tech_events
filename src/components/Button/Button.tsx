@@ -8,7 +8,7 @@ type Props = {
   secondary?: boolean;
 };
 
-class Header extends React.Component<Props> {
+class Button extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
   }
@@ -28,4 +28,4 @@ class Header extends React.Component<Props> {
   }
 }
 
-export default Header;
+export default Button;

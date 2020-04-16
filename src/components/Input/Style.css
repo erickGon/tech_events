@@ -1,0 +1,11 @@
+.trivago-primary-input {
+    background-color: var(--trivago-white-color);
+    border: 0.2rem solid var(--trivago-blue-color);
+    border-radius: 2px;
+    color: var(--trivago-blue-color);
+    cursor: pointer;
+    display: inline-block;
+    font-size: var(--trivago-medium);
+    padding: 0.5rem 1rem;
+  }
+  
