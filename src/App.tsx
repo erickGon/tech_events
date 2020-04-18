@@ -19,6 +19,7 @@ type Props = {};
 type State = {
   cities: cityType[];
   events: eventType[];
+  myEvents: eventType[];
   showMyEvents: boolean;
 };
 
@@ -26,6 +27,7 @@ class App extends React.Component<Props, State> {
   public state: State = {
     cities: [],
     events: [],
+    myEvents: [],
     showMyEvents: false
   };
 
@@ -38,12 +40,13 @@ class App extends React.Component<Props, State> {
       this.setState({ cities: value.data });
     });
 
-    const myEvents = JSON.parse(localStorage.getItem("myEvents") || "[]");
+     this.setState({ myEvents: JSON.parse(localStorage.getItem("myEvents") || "[]")});
 
-    localStorage.setItem("myEvents", JSON.stringify(myEvents));
+    localStorage.setItem("myEvents", JSON.stringify(this.state.myEvents));
   }
 
   public toggleEvents = (show: boolean): void => {
+    this.setState({ myEvents: JSON.parse(localStorage.getItem("myEvents") || "[]")});
     this.setState({ showMyEvents: show });
   };
 
@@ -56,6 +59,7 @@ class App extends React.Component<Props, State> {
           <EventsBox
             events={this.state.events}
             cities={this.state.cities}
+            myEvents = {this.state.myEvents}
             showMyEvents={this.state.showMyEvents}
           />
         </div>

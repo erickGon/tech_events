@@ -1,11 +1,12 @@
 .trivago-primary-button {
   background-color: var(--trivago-white-color);
-  border: 0.2rem solid var(--trivago-blue-color);
   border-radius: 2px;
+  border: 0.2rem solid var(--trivago-blue-color);
   color: var(--trivago-blue-color);
   cursor: pointer;
   display: inline-block;
   font-size: var(--trivago-medium);
+  min-width: 8rem;
   padding: 0.5rem 1rem;
 }
 
@@ -16,12 +17,13 @@
 
 .trivago-secondary-button {
   background-color: var(--trivago-white-color);
-  border: 0.2rem solid var(--trivago-green-color);
   border-radius: 2px;
+  border: 0.2rem solid var(--trivago-green-color);
   color: var(--trivago-green-color);
   cursor: pointer;
   display: inline-block;
   font-size: var(--trivago-medium);
+  min-width: 8rem;
   padding: 0.5rem 1rem;
 }
 

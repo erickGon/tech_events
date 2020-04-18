@@ -63,7 +63,7 @@ class Modal extends React.Component<Props> {
               </div>
               <div className="modal-footer">
                 <a onClick={this.props.toggleModal}>
-                  <Button text="cancel" secondary={true} />
+                  <Button text="Cancel" secondary={true} />
                 </a>
                 <a onClick={this.joinEvent}>
                   <Button text="Join" />
