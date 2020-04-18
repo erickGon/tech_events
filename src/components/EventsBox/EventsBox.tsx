@@ -6,7 +6,6 @@ import "./Style.css";
 // Types
 import cityType from "@/types/city";
 import eventType from "@/types/event";
-import timeOfDayType from "@/types/timeofDay";
 
 // Components
 import Button from "@/components/Button/Button";
@@ -15,6 +14,7 @@ import Input from "@/components/Input/Input";
 
 // Services
 import filterByNameOrCity from "@/services/filterByNameOrCity";
+import filterByTimeOfDay from "@/services/filterByTimeOfDay"
 import filterFree from "@/services/filterFree";
 import groupByDate from "@/services/groupByDate";
 import isStringEmpty from "@/services/isStringEmpty";
@@ -32,7 +32,6 @@ type State = {
   nameOrCity: string;
   selectedTimeOfDay: string;
   showOnlyFree: boolean;
-  timeOfDay: timeOfDayType;
 };
 
 class EventsBox extends React.Component<Props, State> {
@@ -40,25 +39,7 @@ class EventsBox extends React.Component<Props, State> {
     eventsSortByDate: [],
     nameOrCity: "",
     selectedTimeOfDay: "",
-    showOnlyFree: false,
-    timeOfDay: {
-      afternoon: {
-        end: "17:00",
-        start: "12:00"
-      },
-      evening: {
-        end: "21:00",
-        start: "17:00"
-      },
-      morning: {
-        end: "12:00",
-        start: "06:00"
-      },
-      night: {
-        end: "06:00",
-        start: "21:00"
-      }
-    }
+    showOnlyFree: false
   };
 
   constructor(props: Props) {
@@ -74,8 +55,13 @@ class EventsBox extends React.Component<Props, State> {
   };
 
   public selectTimeOfDay = (time: string) => {
-    // TODO: create filter for timeOfDate
-    console.log(this.state.timeOfDay[time]);
+
+    if(time === this.state.selectedTimeOfDay){
+      this.setState({selectedTimeOfDay: ""})
+    } else {
+      this.setState({selectedTimeOfDay: time})
+    }
+    console.log(time);
   }
 
   public render() {
@@ -93,6 +79,13 @@ class EventsBox extends React.Component<Props, State> {
           eventsArray,
           this.state.nameOrCity,
           this.props.cities
+        )
+      : eventsArray;
+
+      eventsArray = isStringEmpty(this.state.selectedTimeOfDay)
+      ? filterByTimeOfDay(
+          eventsArray,
+          this.state.selectedTimeOfDay
         )
       : eventsArray;
 
@@ -146,16 +139,16 @@ class EventsBox extends React.Component<Props, State> {
 
             <div>
               <a onClick={() => this.selectTimeOfDay("morning")}>
-                <Button text="Morning"/>
+                <Button text="Morning" secondary={this.state.selectedTimeOfDay === "morning"}/>
               </a>
               <a onClick={() => this.selectTimeOfDay("afternoon")}>
-                <Button text="Afternoon"/>
+                <Button text="Afternoon" secondary={this.state.selectedTimeOfDay === "afternoon"}/>
               </a>
               <a onClick={() => this.selectTimeOfDay("evening")}>
-                <Button text="Evening"/>
+                <Button text="Evening" secondary={this.state.selectedTimeOfDay === "evening"}/>
               </a>
               <a onClick={() => this.selectTimeOfDay("night")}>
-                <Button text="Night"/>
+                <Button text="Night" secondary={this.state.selectedTimeOfDay === "night"}/>
               </a>
             </div>
 

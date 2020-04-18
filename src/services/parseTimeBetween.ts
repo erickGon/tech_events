@@ -1,16 +1,19 @@
-import * as moment from "moment";
-
 const parseTimeBetween = (start: string, end: string) => {
-  const startMoment = moment(start);
+  const startDate = new Date(start);
 
-  const endMoment = moment(end);
+  const endDate = new Date(end);
 
-  const duration = moment.duration(endMoment.diff(startMoment));
+  const duration = endDate.getTime() - startDate.getTime();
 
-  const hours = duration.get("hours") + "h ";
-  const min = duration.get("minutes") ? duration.get("minutes") + "min" : "";
+  const durationInMin = duration/(60*1000);
 
-  return hours + min;
+  const hours = `${Math.floor(durationInMin/60)} h`;
+
+  const minNumber = durationInMin % 60;
+  
+  const min =  minNumber ? `${minNumber} min` : "";
+
+  return `${hours} ${min}`;
 };
 
 export default parseTimeBetween;

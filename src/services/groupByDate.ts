@@ -5,7 +5,6 @@ import parseDate from "@/services/parseDate";
 const groupByDate = (data: eventType[]) => {
   const dates = data.reduce((groups, event) => {
     const date = parseDate(event.startDate, "YYYY-MM-DD");
-
     if (!groups[date]) {
       groups[date] = [];
     }

@@ -38,4 +38,11 @@
     padding-right: 1rem;
     width: 100%;
   }
+  .box-filter {
+    flex-direction: column;
+  }
+
+  .box-filter div {
+    padding: 0.5rem 0;
+  }
 }
