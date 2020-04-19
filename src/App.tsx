@@ -6,6 +6,7 @@ import "@/assets/styles/App.css";
 // Components
 import EventsBox from "@/components/EventsBox/EventsBox";
 import Header from "@/components/Header/Header";
+import Loader from "@/components/Loader/Loader";
 
 // Services
 import GetApiData from "@/services/getApiData";
@@ -20,6 +21,7 @@ type State = {
   cities: cityType[];
   events: eventType[];
   myEvents: eventType[];
+  showLoader: boolean;
   showMyEvents: boolean;
 };
 
@@ -28,12 +30,13 @@ class App extends React.Component<Props, State> {
     cities: [],
     events: [],
     myEvents: [],
+    showLoader: true,
     showMyEvents: false
   };
 
   public componentDidMount() {
     GetApiData("events").then(value => {
-      this.setState({ events: value.data });
+      this.setState({ events: value.data, showLoader: false });
     });
 
     GetApiData("cities").then(value => {
@@ -67,6 +70,7 @@ class App extends React.Component<Props, State> {
             showMyEvents={this.state.showMyEvents}
           />
         </div>
+        <Loader show={this.state.showLoader} />
       </div>
     );
   }
