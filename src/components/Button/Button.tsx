@@ -10,10 +10,6 @@ type Props = {
 };
 
 class Button extends React.Component<Props> {
-  constructor(props: Props) {
-    super(props);
-  }
-
   public render() {
     const buttonStyle = this.props.secondary
       ? "trivago-secondary-button"
@@ -23,7 +19,7 @@ class Button extends React.Component<Props> {
 
     const buttonClass = `${buttonStyle} ${buttonActive}`;
 
-    return <button className={buttonClass}>{this.props.text}</button>;
+    return <div className={buttonClass}>{this.props.text}</div>;
   }
 }
 

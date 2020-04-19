@@ -4,15 +4,15 @@ import * as React from "react";
 import "./Style.css";
 
 // Components
-import Button from "@/components/Button/Button";
+import Button from "../Button/Button";
 
 // Types
-import cityType from "@/types/city";
-import eventType from "@/types/event";
+import cityType from "../../types/city";
+import eventType from "../../types/event";
 
 // Services
-import parseDate from "@/services/parseDate";
-import setCityName from "@/services/setCityName";
+import parseDate from "../../services/parseDate";
+import setCityName from "../../services/setCityName";
 
 type Props = {
   cities: cityType[];
@@ -22,10 +22,6 @@ type Props = {
 };
 
 class Modal extends React.Component<Props> {
-  constructor(props: Props) {
-    super(props);
-  }
-
   public joinEvent = () => {
     this.props.toggleModal();
     const myEvents = JSON.parse(localStorage.getItem("myEvents") || "[]");
@@ -40,16 +36,16 @@ class Modal extends React.Component<Props> {
       <div>
         {this.props.showModal ? (
           <section id="modal">
-            <a className="modal-background" onClick={this.props.toggleModal} />
+            <div className="modal-background" />
             <div className="modal-box">
               <div className="modal-header">
                 <span />
 
                 <h2>Join the event</h2>
 
-                <a className="close-x" onClick={this.props.toggleModal}>
+                <button className="close-x" onClick={this.props.toggleModal}>
                   X
-                </a>
+                </button>
               </div>
               <div className="modal-content">
                 <p>
@@ -62,12 +58,12 @@ class Modal extends React.Component<Props> {
                 <p>Are you sure?</p>
               </div>
               <div className="modal-footer">
-                <a onClick={this.props.toggleModal}>
+                <button onClick={this.props.toggleModal}>
                   <Button text="Cancel" secondary={true} />
-                </a>
-                <a onClick={this.joinEvent}>
+                </button>
+                <button onClick={this.joinEvent}>
                   <Button text="Join" />
-                </a>
+                </button>
               </div>
             </div>
           </section>

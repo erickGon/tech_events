@@ -1,4 +1,4 @@
-import eventType from "@/types/event";
+import eventType from "../types/event";
 
 const hasSingUp = (event: eventType) => {
   let pass = true;

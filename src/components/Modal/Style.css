@@ -67,7 +67,7 @@
   width: -webkit-stretch;
 }
 
-.modal-footer a {
+.modal-footer button {
   margin-right: 4rem;
 }
 
@@ -85,7 +85,7 @@
     width: 40%;
   }
 
-  .modal-footer a button {
+  .modal-footer button div {
     width: 100%;
   }
 }

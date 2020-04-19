@@ -33,3 +33,17 @@ ul {
   overflow-x: hidden;
   width: 100%;
 }
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  text-transform: none;
+}
+
+button:focus {
+  outline: none;
+}

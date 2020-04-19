@@ -1,19 +1,19 @@
 import * as React from "react";
 
 // Styles
-import "@/assets/styles/App.css";
+import "./assets/styles/App.css";
 
 // Components
-import EventsBox from "@/components/EventsBox/EventsBox";
-import Header from "@/components/Header/Header";
-import Loader from "@/components/Loader/Loader";
+import EventsBox from "./components/EventsBox/EventsBox";
+import Header from "./components/Header/Header";
+import Loader from "./components/Loader/Loader";
 
 // Services
-import GetApiData from "@/services/getApiData";
+import GetApiData from "./services/getApiData";
 
 // Types
-import cityType from "@/types/city";
-import eventType from "@/types/event";
+import cityType from "./types/city";
+import eventType from "./types/event";
 
 type Props = {};
 
@@ -35,12 +35,12 @@ class App extends React.Component<Props, State> {
   };
 
   public componentDidMount() {
-    GetApiData("events").then(value => {
-      this.setState({ events: value.data, showLoader: false });
-    });
-
     GetApiData("cities").then(value => {
       this.setState({ cities: value.data });
+    });
+
+    GetApiData("events").then(value => {
+      this.setState({ events: value.data, showLoader: false });
     });
 
     this.setState({

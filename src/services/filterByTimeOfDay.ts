@@ -1,8 +1,8 @@
-import eventType from "@/types/event";
-import hoursOfDayType from "@/types/hoursOfDayType";
-import timeOfDayType from "@/types/timeofDay";
+import eventType from "../types/event";
+import hoursOfDayType from "../types/hoursOfDayType";
+import timeOfDayType from "../types/timeofDay";
 
-import parseDate from "@/services/parseDate";
+import parseDate from "./parseDate";
 
 const timeOfDay: timeOfDayType = {
   afternoon: {

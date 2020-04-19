@@ -37,7 +37,7 @@
   display: flex;
 }
 
-.button-group a:not(.last-button) button {
+.button-group button:not(.last-button) div {
   border-right: 0;
 }
 

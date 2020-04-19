@@ -4,21 +4,21 @@ import * as React from "react";
 import "./Style.css";
 
 // Types
-import cityType from "@/types/city";
-import eventType from "@/types/event";
+import cityType from "../../types/city";
+import eventType from "../../types/event";
 
 // Components
-import Button from "@/components/Button/Button";
-import EventsList from "@/components/EventsList/EventsList";
-import Input from "@/components/Input/Input";
+import Button from "../Button/Button";
+import EventsList from "../EventsList/EventsList";
+import Input from "../Input/Input";
 
 // Services
-import filterByNameOrCity from "@/services/filterByNameOrCity";
-import filterByTimeOfDay from "@/services/filterByTimeOfDay";
-import filterFree from "@/services/filterFree";
-import groupByDate from "@/services/groupByDate";
-import isStringEmpty from "@/services/isStringEmpty";
-import parseDate from "@/services/parseDate";
+import filterByNameOrCity from "../../services/filterByNameOrCity";
+import filterByTimeOfDay from "../../services/filterByTimeOfDay";
+import filterFree from "../../services/filterFree";
+import groupByDate from "../../services/groupByDate";
+import isStringEmpty from "../../services/isStringEmpty";
+import parseDate from "../../services/parseDate";
 
 type Props = {
   cities: cityType[];
@@ -44,10 +44,6 @@ class EventsBox extends React.Component<Props, State> {
     showOnlyFree: false
   };
 
-  constructor(props: Props) {
-    super(props);
-  }
-
   public toggleFreeEvents = (show: boolean) => {
     this.setState({ showOnlyFree: show });
   };
@@ -62,7 +58,6 @@ class EventsBox extends React.Component<Props, State> {
     } else {
       this.setState({ selectedTimeOfDay: time });
     }
-    console.log(time);
   };
 
   public render() {
@@ -124,7 +119,7 @@ class EventsBox extends React.Component<Props, State> {
     const buttonsTimeOfDay = this.state.arrayOfTime.map(
       (name: string, index: number) => {
         return (
-          <a
+          <button
             className={
               index + 1 === this.state.arrayOfTime.length ? "last-button" : ""
             }
@@ -136,7 +131,7 @@ class EventsBox extends React.Component<Props, State> {
               secondary={this.state.selectedTimeOfDay === name}
               active={this.state.selectedTimeOfDay === name}
             />
-          </a>
+          </button>
         );
       }
     );
@@ -145,14 +140,14 @@ class EventsBox extends React.Component<Props, State> {
       <section id="events-box">
         <div className="box-filter">
           <div className="button-group">
-            <a onClick={() => this.toggleFreeEvents(false)}>
+            <button onClick={() => this.toggleFreeEvents(false)}>
               <Button
                 active={!this.state.showOnlyFree}
                 secondary={!this.state.showOnlyFree}
                 text="All"
               />
-            </a>
-            <a
+            </button>
+            <button
               className="last-button"
               onClick={() => this.toggleFreeEvents(true)}
             >
@@ -161,7 +156,7 @@ class EventsBox extends React.Component<Props, State> {
                 secondary={this.state.showOnlyFree}
                 text="Free"
               />
-            </a>
+            </button>
           </div>
 
           <div className="button-group">{buttonsTimeOfDay}</div>

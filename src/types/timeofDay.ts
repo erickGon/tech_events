@@ -1,4 +1,4 @@
-import hoursOfDayType from "@/types/hoursOfDayType";
+import hoursOfDayType from "./hoursOfDayType";
 
 type timeOfDay = {
   morning: hoursOfDayType;

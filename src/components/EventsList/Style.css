@@ -38,7 +38,11 @@
     width: 100%;
   }
 
-  .col-1 a button {
+  .col-1 button {
+    width: 100%;
+  }
+
+  .col-1 button div {
     width: 100%;
   }
 

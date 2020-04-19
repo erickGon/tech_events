@@ -3,17 +3,13 @@ import * as React from "react";
 // Styles
 import "./Style.css";
 
-import logo from "@/assets/img/logo.svg";
+import logo from "../../assets/img/logo.svg";
 
 type Props = {
   show: boolean;
 };
 
 class Loader extends React.Component<Props> {
-  constructor(props: Props) {
-    super(props);
-  }
-
   public render() {
     return (
       <div>

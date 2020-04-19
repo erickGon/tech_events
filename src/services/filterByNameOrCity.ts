@@ -1,7 +1,7 @@
-import cityType from "@/types/city";
-import eventType from "@/types/event";
+import cityType from "../types/city";
+import eventType from "../types/event";
 
-import setCityName from "@/services/setCityName";
+import setCityName from "./setCityName";
 
 const filterByNameOrCity = (
   data: eventType[],
