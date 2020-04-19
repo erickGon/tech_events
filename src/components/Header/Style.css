@@ -46,7 +46,7 @@
   color: var(--trivago-blue-color);
 }
 
-.active {
+.active button h3 {
   color: var(--trivago-blue-color);
 }
 
