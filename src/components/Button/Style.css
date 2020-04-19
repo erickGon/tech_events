@@ -1,13 +1,14 @@
 .trivago-primary-button {
   background-color: var(--trivago-white-color);
-  border-radius: 2px;
   border: 0.2rem solid var(--trivago-blue-color);
+  border-radius: 2px;
   color: var(--trivago-blue-color);
   cursor: pointer;
   display: inline-block;
   font-size: var(--trivago-medium);
   min-width: 8rem;
   padding: 0.5rem 1rem;
+  text-transform: capitalize;
 }
 
 .trivago-primary-button:hover {
@@ -17,17 +18,23 @@
 
 .trivago-secondary-button {
   background-color: var(--trivago-white-color);
-  border-radius: 2px;
   border: 0.2rem solid var(--trivago-green-color);
+  border-radius: 2px;
   color: var(--trivago-green-color);
   cursor: pointer;
   display: inline-block;
   font-size: var(--trivago-medium);
   min-width: 8rem;
   padding: 0.5rem 1rem;
+  text-transform: capitalize;
 }
 
 .trivago-secondary-button:hover {
+  background-color: var(--trivago-green-color);
+  color: var(--trivago-white-color);
+}
+
+.trivago-active {
   background-color: var(--trivago-green-color);
   color: var(--trivago-white-color);
 }

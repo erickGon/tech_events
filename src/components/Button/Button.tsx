@@ -4,6 +4,7 @@ import * as React from "react";
 import "./Style.css";
 
 type Props = {
+  active?: boolean;
   text: string;
   secondary?: boolean;
 };
@@ -14,17 +15,15 @@ class Button extends React.Component<Props> {
   }
 
   public render() {
-    return (
-      <button
-        className={
-          this.props.secondary
-            ? "trivago-secondary-button"
-            : "trivago-primary-button"
-        }
-      >
-        {this.props.text}
-      </button>
-    );
+    const buttonStyle = this.props.secondary
+      ? "trivago-secondary-button"
+      : "trivago-primary-button";
+
+    const buttonActive = this.props.active ? "trivago-active" : "";
+
+    const buttonClass = `${buttonStyle} ${buttonActive}`;
+
+    return <button className={buttonClass}>{this.props.text}</button>;
   }
 }
 

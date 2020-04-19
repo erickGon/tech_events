@@ -1,7 +1,6 @@
 type hoursOfDayType = {
-  start: string,
-  end: string
+  start: string;
+  end: string;
 };
 
 export default hoursOfDayType;
-  

@@ -32,17 +32,35 @@
   padding: 2rem 0;
 }
 
+.button-group {
+  align-items: baseline;
+  display: flex;
+}
+
+.button-group a:not(.last-button) button {
+  border-right: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .button-group {
+    padding: 0.5rem 0;
+  }
+
+  .box-filter {
+    flex-direction: column;
+  }
+}
+
 @media screen and (max-width: 600px) {
   #events-box {
     padding-left: 1rem;
     padding-right: 1rem;
     width: 100%;
   }
-  .box-filter {
-    flex-direction: column;
-  }
+}
 
-  .box-filter div {
-    padding: 0.5rem 0;
+@media screen and (max-width: 320px) {
+  .button-group {
+    flex-direction: column;
   }
 }

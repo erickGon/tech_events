@@ -1,14 +1,14 @@
 .events-list {
+  align-items: baseline;
   -ms-box-orient: horizontal;
-  -webkit-flex-wrap: wrap;
   display: flex;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  justify-content: center;
   list-style: none;
   margin: 0;
   padding: 0;
-  align-items: baseline;
-  justify-content: center;
-  flex-direction: row;
 }
 
 .green-text {
@@ -16,13 +16,13 @@
 }
 
 .col-1 {
-  width: 20%;
   padding-bottom: 0.5rem;
+  width: 20%;
 }
 
 .col-2 {
-  width: 60%;
   padding-bottom: 0.5rem;
+  width: 60%;
 }
 
 .left-text {
@@ -33,11 +33,12 @@
   .events-list {
     flex-direction: column;
   }
+
   .col-1 {
     width: 100%;
   }
-  
-  .col-1 a button{
+
+  .col-1 a button {
     width: 100%;
   }
 
@@ -45,4 +46,3 @@
     width: 100%;
   }
 }
-

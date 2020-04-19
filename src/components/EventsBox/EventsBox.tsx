@@ -14,7 +14,7 @@ import Input from "@/components/Input/Input";
 
 // Services
 import filterByNameOrCity from "@/services/filterByNameOrCity";
-import filterByTimeOfDay from "@/services/filterByTimeOfDay"
+import filterByTimeOfDay from "@/services/filterByTimeOfDay";
 import filterFree from "@/services/filterFree";
 import groupByDate from "@/services/groupByDate";
 import isStringEmpty from "@/services/isStringEmpty";
@@ -32,10 +32,12 @@ type State = {
   nameOrCity: string;
   selectedTimeOfDay: string;
   showOnlyFree: boolean;
+  arrayOfTime: string[];
 };
 
 class EventsBox extends React.Component<Props, State> {
   public state: State = {
+    arrayOfTime: ["morning", "afternoon", "evening", "night"],
     eventsSortByDate: [],
     nameOrCity: "",
     selectedTimeOfDay: "",
@@ -46,8 +48,8 @@ class EventsBox extends React.Component<Props, State> {
     super(props);
   }
 
-  public toggleFreeEvents = () => {
-    this.setState({ showOnlyFree: !this.state.showOnlyFree });
+  public toggleFreeEvents = (show: boolean) => {
+    this.setState({ showOnlyFree: show });
   };
 
   public handleChange = (text: string): void => {
@@ -55,17 +57,15 @@ class EventsBox extends React.Component<Props, State> {
   };
 
   public selectTimeOfDay = (time: string) => {
-
-    if(time === this.state.selectedTimeOfDay){
-      this.setState({selectedTimeOfDay: ""})
+    if (time === this.state.selectedTimeOfDay) {
+      this.setState({ selectedTimeOfDay: "" });
     } else {
-      this.setState({selectedTimeOfDay: time})
+      this.setState({ selectedTimeOfDay: time });
     }
     console.log(time);
-  }
+  };
 
   public render() {
-    
     let eventsArray = this.props.showMyEvents
       ? this.props.myEvents
       : this.props.events;
@@ -82,11 +82,8 @@ class EventsBox extends React.Component<Props, State> {
         )
       : eventsArray;
 
-      eventsArray = isStringEmpty(this.state.selectedTimeOfDay)
-      ? filterByTimeOfDay(
-          eventsArray,
-          this.state.selectedTimeOfDay
-        )
+    eventsArray = isStringEmpty(this.state.selectedTimeOfDay)
+      ? filterByTimeOfDay(eventsArray, this.state.selectedTimeOfDay)
       : eventsArray;
 
     const eventsSortByDate = groupByDate(eventsArray);
@@ -124,37 +121,54 @@ class EventsBox extends React.Component<Props, State> {
         </div>
       );
 
+    const buttonsTimeOfDay = this.state.arrayOfTime.map(
+      (name: string, index: number) => {
+        return (
+          <a
+            className={
+              index + 1 === this.state.arrayOfTime.length ? "last-button" : ""
+            }
+            key={name}
+            onClick={() => this.selectTimeOfDay(name)}
+          >
+            <Button
+              text={name}
+              secondary={this.state.selectedTimeOfDay === name}
+              active={this.state.selectedTimeOfDay === name}
+            />
+          </a>
+        );
+      }
+    );
+
     return (
       <section id="events-box">
         <div className="box-filter">
-          {this.state.showOnlyFree ? (
-            <a onClick={() => this.toggleFreeEvents()}>
-              <Button text="Free" secondary={true} />
+          <div className="button-group">
+            <a onClick={() => this.toggleFreeEvents(false)}>
+              <Button
+                active={!this.state.showOnlyFree}
+                secondary={!this.state.showOnlyFree}
+                text="All"
+              />
             </a>
-          ) : (
-            <a onClick={() => this.toggleFreeEvents()}>
-              <Button text="All" />
+            <a
+              className="last-button"
+              onClick={() => this.toggleFreeEvents(true)}
+            >
+              <Button
+                active={this.state.showOnlyFree}
+                secondary={this.state.showOnlyFree}
+                text="Free"
+              />
             </a>
-          )}
+          </div>
 
-            <div>
-              <a onClick={() => this.selectTimeOfDay("morning")}>
-                <Button text="Morning" secondary={this.state.selectedTimeOfDay === "morning"}/>
-              </a>
-              <a onClick={() => this.selectTimeOfDay("afternoon")}>
-                <Button text="Afternoon" secondary={this.state.selectedTimeOfDay === "afternoon"}/>
-              </a>
-              <a onClick={() => this.selectTimeOfDay("evening")}>
-                <Button text="Evening" secondary={this.state.selectedTimeOfDay === "evening"}/>
-              </a>
-              <a onClick={() => this.selectTimeOfDay("night")}>
-                <Button text="Night" secondary={this.state.selectedTimeOfDay === "night"}/>
-              </a>
-            </div>
+          <div className="button-group">{buttonsTimeOfDay}</div>
 
           <Input
             handleChange={this.handleChange}
-            name="nameOrCity"
+            name="Name or city"
             placeholder=" Search by title or city"
             type="text"
           />
